@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Age Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enter Your Date of Birth</h2>
+  <input type="date" id="dob">
+  <button onclick="generateAge()">Generate Age</button>
+
+  <div id="output"></div>
+
+  <script>
+    function generateAge() {
+      const dobValue = document.getElementById("dob").value;
+      const outputDiv = document.getElementById("output");
+
+      if (!dobValue) {
+        outputDiv.innerHTML = "⚠ Please select your date of birth.";
+        return;
+      }
+
+      const dob = new Date(dobValue);
+      const today = new Date();
+
+      let age = today.getFullYear() - dob.getFullYear();
+      const month = today.getMonth() - dob.getMonth();
+      const day = today.getDate() - dob.getDate();
+
+      if (month < 0 || (month === 0 && day < 0)) {
+        age--;
+      }
+
+      
+    }
+  </script>
+</body>
+</html>
