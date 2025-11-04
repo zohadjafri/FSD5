@@ -1,0 +1,14 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import ImageRotate from './ImageRotate.jsx'
+import Count from './Count.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    {/* <App /> */}
+    {/* <Count /> */}
+    <ImageRotate />
+  </StrictMode>,
+)
